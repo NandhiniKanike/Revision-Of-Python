@@ -1,0 +1,105 @@
+## Python Functions
+A function is a reusable block of code that performs a specific task.
+It helps in:
+          Code reusability
+          Better readability
+          Modular programming
+## Syntax
+def function_name(parameters):
+    # code
+    return value
+Example 1: Simple Function
+def greet(name):
+    return f"Hello, {name}!"
+print(greet("Nandhini"))
+Output:
+Hello, Nandhini!
+Example 2: Function with Multiple Parameters
+def add(a, b):
+    return a + b
+result = add(10, 20)
+print("Sum:", result)
+Output:
+Sum: 30
+Example 3: Default Parameter
+def power(base, exponent=2):
+    return base ** exponent
+print(power(5))      
+print(power(5, 3))   
+Example 4: Lambda Function (Anonymous Function)
+square = lambda x: x * x
+print(square(4))
+
+ ## Python Packages
+A package is a collection of modules.
+A module is a Python file containing functions, classes, or variables.
+Example:
+        math
+        datetime
+        requests
+You import a package using:
+import package_name
+          or
+from package_name import specific_function
+## Datetime Package
+The datetime module is used to work with date and time.
+It helps in:
+        Getting current date/time
+        Formatting date
+        Calculating time difference
+        Working with timestamps
+Example 1: Get Current Date & Time
+import datetime
+now = datetime.datetime.now()
+print("Current Date & Time:", now)
+Example 2: Get Only Date
+today = datetime.date.today()
+print("Today's Date:", today)
+Example 3: Formatting Date
+import datetime
+now = datetime.datetime.now()
+formatted = now.strftime("%d-%m-%Y %H:%M:%S")
+print("Formatted Date:", formatted)
+Output format codes:
+            %d → Day
+            %m → Month
+            %Y → Year
+            %H → Hour
+            %M → Minute
+            %S → Second
+## Example 4: Date Difference
+import datetime
+date1 = datetime.date(2025, 2, 10)
+date2 = datetime.date(2025, 2, 1)
+difference = date1 - date2
+print("Days Difference:", difference.days)
+
+## requests Package
+The requests package is used to make HTTP requests (API calls).
+It is not built-in, so install first:
+pip install requests
+Used for:
+        Getting data from APIs
+        Sending POST requests
+        Downloading files
+        Web scraping
+Example 1: GET Request
+import requests
+response = requests.get("https://api.github.com")
+print("Status Code:", response.status_code)
+print("Response Text:", response.text)
+Example 2: GET JSON Data
+import requests
+url = "https://api.github.com"
+response = requests.get(url)
+data = response.json()   
+print(data)
+Example 3: POST Request
+import requests
+url = "https://httpbin.org/post"
+data = {
+    "username": "nandhini",
+    "password": "1234"
+}
+response = requests.post(url, data=data)
+print(response.json())
